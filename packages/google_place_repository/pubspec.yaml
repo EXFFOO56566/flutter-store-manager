@@ -1,0 +1,23 @@
+name: google_place_repository
+description: Dart package which manages the chart google place domain.
+publish_to: none
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+
+dependencies:
+  equatable: ^2.0.3
+  appcheap_flutter_core:
+    path: ../../appcheap_flutter_core
+
+  # A Flutter plugin that provides a Google Maps widget.
+  google_maps_flutter: ^2.1.3
+  google_maps_flutter_web: ^0.3.2+1
+
+  dio: ^4.0.6
+
+  json_annotation: ^4.4.0
+  json_serializable: ^6.1.4
+
+dev_dependencies:
+  flutter_lints: ^2.0.0

@@ -1,0 +1,34 @@
+import 'package:example/common/widgets/input_html_editor/input_html_editor.dart';
+import 'package:flutter/material.dart';
+
+// Utils
+
+// Bloc
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:example/screens/store_setup/bloc/store_setting_bloc.dart';
+
+class FaceBookDesWidget extends StatelessWidget {
+  FaceBookDesWidget({Key? key}) : super(key: key);
+  final _focusNode = FocusNode();
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<StoreSettingBloc, StoreSettingState>(
+      buildWhen: (previous, current) => previous.facebookDes != current.facebookDes,
+      builder: (context, state) {
+        return InputHtmlEditor(
+          focusNode: _focusNode,
+          label: "Facebook Description",
+          value: state.facebookDes ?? "",
+          onChanged: (faceDes) {
+            _focusNode.addListener(() {
+              if (!_focusNode.hasFocus) {
+                context.read<StoreSettingBloc>().add(FacebookDesChanged(faceDes));
+              }
+            });
+          },
+        );
+      },
+    );
+  }
+}

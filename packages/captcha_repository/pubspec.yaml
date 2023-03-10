@@ -1,0 +1,16 @@
+name: captcha_repository
+description: Dart package which manages the captcha domain.
+publish_to: none
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+
+dependencies:
+  equatable: ^2.0.0
+  appcheap_flutter_core:
+    path: ../../appcheap_flutter_core
+  json_annotation: ^4.4.0
+  json_serializable: ^6.1.4
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
